@@ -4,7 +4,6 @@ kind: Deployment
 metadata:
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.podinfod: semver:~1.7
   name: frontend
   namespace: team1
 spec:
@@ -21,7 +20,6 @@ kind: Deployment
 metadata:
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.podinfod: semver:~1.7
   name: backend
   namespace: team1
 spec:
