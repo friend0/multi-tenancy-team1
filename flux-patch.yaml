@@ -28,5 +28,5 @@ spec:
       $setElementOrder/containers:
       - name: podinfod
       containers:
-      - image: quay.io/stefanprodan/podinfo:1.7.4
+      - image: podinfo:v0.1.5
         name: podinfod
