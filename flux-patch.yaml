@@ -4,22 +4,6 @@ kind: Deployment
 metadata:
   annotations:
     flux.weave.works/automated: "true"
-  name: frontend
-  namespace: team1
-spec:
-  template:
-    spec:
-      $setElementOrder/containers:
-      - name: podinfod
-      containers:
-      - image: quay.io/stefanprodan/podinfo:1.7.4
-        name: podinfod
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  annotations:
-    flux.weave.works/automated: "true"
   name: backend
   namespace: team1
 spec:
@@ -29,4 +13,20 @@ spec:
       - name: podinfod
       containers:
       - image: podinfo:1.7.0
+        name: podinfod
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    flux.weave.works/automated: "true"
+  name: frontend
+  namespace: team1
+spec:
+  template:
+    spec:
+      $setElementOrder/containers:
+      - name: podinfod
+      containers:
+      - image: quay.io/stefanprodan/podinfo:3.2.1
         name: podinfod
